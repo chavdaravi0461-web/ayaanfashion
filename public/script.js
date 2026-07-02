@@ -170,7 +170,7 @@ document.getElementById('closeCart')?.addEventListener('click', closeCart);
 document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
 
 // Checkout
-document.getElementById('checkoutBtn')?.addEventListener('click', () => {
+function openCheckout() {
   if (cart.length === 0) return;
   document.getElementById('checkoutTotal').textContent = `$${cartTotal()}`;
   closeCart();
@@ -178,7 +178,7 @@ document.getElementById('checkoutBtn')?.addEventListener('click', () => {
   overlay.classList.remove('hidden');
   overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
-});
+}
 
 document.getElementById('closeCheckout')?.addEventListener('click', hideCheckout);
 document.getElementById('checkoutOverlay')?.addEventListener('click', e => {

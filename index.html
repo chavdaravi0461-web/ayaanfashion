@@ -130,12 +130,12 @@
         <span class="text-gray-500">Subtotal</span>
         <span id="cartSubtotal" class="font-semibold text-lg">$0</span>
       </div>
-      <button id="checkoutBtn" class="w-full py-3 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition">Checkout</button>
+      <button id="checkoutBtn" onclick="openCheckout()" class="w-full py-3 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition">Checkout</button>
     </div>
   </div>
 
   <!-- Checkout Modal -->
-  <div id="checkoutOverlay" class="fixed inset-0 bg-black/60 z-50 hidden items-center justify-center p-4">
+  <div id="checkoutOverlay" class="fixed inset-0 bg-black/60 z-[60] hidden items-center justify-center p-4">
     <div class="bg-white rounded-2xl w-full max-w-lg max-h-[90vh] overflow-y-auto p-6 sm:p-8">
       <div class="flex items-center justify-between mb-6">
         <h2 class="text-xl font-bold">Checkout</h2>
