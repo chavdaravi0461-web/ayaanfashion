@@ -173,24 +173,24 @@ document.getElementById('cartOverlay')?.addEventListener('click', closeCart);
 document.getElementById('checkoutBtn')?.addEventListener('click', () => {
   if (cart.length === 0) return;
   document.getElementById('checkoutTotal').textContent = `$${cartTotal()}`;
-  document.getElementById('checkoutOverlay').classList.remove('hidden');
-  document.getElementById('checkoutOverlay').style.display = 'flex';
+  closeCart();
+  const overlay = document.getElementById('checkoutOverlay');
+  overlay.classList.remove('hidden');
+  overlay.style.display = 'flex';
   document.body.style.overflow = 'hidden';
 });
 
-document.getElementById('closeCheckout')?.addEventListener('click', () => {
-  document.getElementById('checkoutOverlay').style.display = 'none';
-  document.getElementById('checkoutOverlay').classList.add('hidden');
-  document.body.style.overflow = '';
+document.getElementById('closeCheckout')?.addEventListener('click', hideCheckout);
+document.getElementById('checkoutOverlay')?.addEventListener('click', e => {
+  if (e.target === e.currentTarget) hideCheckout();
 });
 
-document.getElementById('checkoutOverlay')?.addEventListener('click', e => {
-  if (e.target === e.currentTarget) {
-    document.getElementById('checkoutOverlay').style.display = 'none';
-    document.getElementById('checkoutOverlay').classList.add('hidden');
-    document.body.style.overflow = '';
-  }
-});
+function hideCheckout() {
+  const overlay = document.getElementById('checkoutOverlay');
+  overlay.style.display = 'none';
+  overlay.classList.add('hidden');
+  document.body.style.overflow = '';
+}
 
 document.getElementById('checkoutForm')?.addEventListener('submit', e => {
   e.preventDefault();
@@ -201,13 +201,11 @@ document.getElementById('checkoutForm')?.addEventListener('submit', e => {
     customer: Object.fromEntries(data),
     date: new Date().toISOString(),
   };
-  console.log('ORDER PLACED:', order);
+  localStorage.setItem('ayaan_last_order', JSON.stringify(order));
   cart = [];
   saveCart();
   updateBadge();
-  document.getElementById('checkoutOverlay').style.display = 'none';
-  document.getElementById('checkoutOverlay').classList.add('hidden');
-  document.body.style.overflow = '';
+  hideCheckout();
   showToast('Order placed! Thank you for shopping with Ayaan.');
 });
 
