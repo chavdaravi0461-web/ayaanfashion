@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayaan Fashion — Premium E-Commerce</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="public/style.css" />
+</head>
+<body class="bg-white text-gray-900 font-sans antialiased">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 w-full bg-white/90 backdrop-blur-md border-b border-gray-100 z-50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-16">
+      <a href="#" class="text-xl font-bold tracking-tight">AYAAN</a>
+      <div class="hidden md:flex items-center gap-8 text-sm font-medium text-gray-600">
+        <a href="#" class="hover:text-black transition">New In</a>
+        <a href="#" class="hover:text-black transition">Clothing</a>
+        <a href="#" class="hover:text-black transition">Accessories</a>
+        <a href="#" class="hover:text-black transition">Sale</a>
+      </div>
+      <div class="flex items-center gap-4 text-sm">
+        <button class="hover:text-gray-600 transition">Search</button>
+        <button class="hover:text-gray-600 transition relative">
+          Cart <span class="absolute -top-1.5 -right-4 bg-black text-white text-[10px] w-4 h-4 rounded-full flex items-center justify-center">0</span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="min-h-screen flex items-center justify-center bg-gradient-to-br from-gray-50 via-white to-gray-100 pt-16">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid lg:grid-cols-2 gap-12 items-center">
+      <div>
+        <span class="text-xs font-semibold uppercase tracking-widest text-gray-400">Summer Collection 2025</span>
+        <h1 class="text-5xl sm:text-6xl lg:text-7xl font-bold leading-[1.1] mt-4">Elevate Your<br/>Everyday Style</h1>
+        <p class="text-gray-500 text-lg mt-6 max-w-md leading-relaxed">
+          Discover curated fashion that blends timeless elegance with modern edge. From tailored fits to fluid silhouettes.
+        </p>
+        <div class="flex gap-4 mt-8">
+          <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition">Shop Now</a>
+          <a href="#" class="inline-flex items-center justify-center px-8 py-3.5 border border-gray-300 text-sm font-medium rounded-full hover:border-black transition">Explore</a>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-[4/5] bg-gray-100 rounded-2xl overflow-hidden">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80" alt="Fashion" class="w-full h-full object-cover" />
+        </div>
+        <div class="absolute -bottom-4 -left-4 bg-white rounded-xl shadow-xl p-4 text-sm">
+          <p class="font-semibold">New Arrivals</p>
+          <p class="text-gray-400 text-xs">42 styles just dropped</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Featured Categories -->
+  <section class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between mb-12">
+        <div>
+          <span class="text-xs font-semibold uppercase tracking-widest text-gray-400">Collections</span>
+          <h2 class="text-3xl sm:text-4xl font-bold mt-2">Shop by Category</h2>
+        </div>
+        <a href="#" class="hidden sm:inline text-sm font-medium border-b border-black pb-0.5 hover:text-gray-600 hover:border-gray-400 transition">View All</a>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] bg-gray-50 rounded-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1434389677669-e08b4cda3a68?w=400&q=80" alt="Clothing" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <p class="text-sm font-medium mt-3">Clothing</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] bg-gray-50 rounded-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1599643478518-a784e5dc4c8f?w=400&q=80" alt="Accessories" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <p class="text-sm font-medium mt-3">Accessories</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] bg-gray-50 rounded-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1556905055-8f358a7a47b2?w=400&q=80" alt="Footwear" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <p class="text-sm font-medium mt-3">Footwear</p>
+        </div>
+        <div class="group cursor-pointer">
+          <div class="aspect-[3/4] bg-gray-50 rounded-xl overflow-hidden">
+            <img src="https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=400&q=80" alt="Bags" class="w-full h-full object-cover group-hover:scale-105 transition duration-500" />
+          </div>
+          <p class="text-sm font-medium mt-3">Bags</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Products -->
+  <section class="py-24 bg-gray-50/50">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="text-center mb-12">
+        <span class="text-xs font-semibold uppercase tracking-widest text-gray-400">Best Sellers</span>
+        <h2 class="text-3xl sm:text-4xl font-bold mt-2">Trending Now</h2>
+      </div>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6" id="product-grid"></div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="py-24 bg-black text-white">
+    <div class="max-w-2xl mx-auto px-4 text-center">
+      <h2 class="text-3xl sm:text-4xl font-bold">Join the Ayaan Circle</h2>
+      <p class="text-gray-400 mt-4 text-lg">15% off your first order + early access to drops and exclusive edits.</p>
+      <form class="mt-8 flex max-w-md mx-auto gap-2" onsubmit="event.preventDefault(); alert('Thanks for subscribing!')">
+        <input type="email" required placeholder="Enter your email" class="flex-1 px-4 py-3 bg-white/10 border border-white/20 rounded-lg text-white placeholder:text-gray-500 text-sm focus:outline-none focus:border-white/50" />
+        <button type="submit" class="px-6 py-3 bg-white text-black text-sm font-medium rounded-lg hover:bg-gray-200 transition">Subscribe</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="py-16 border-t border-gray-100 bg-white">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+      <div><h4 class="font-semibold mb-4">Shop</h4><ul class="space-y-2 text-gray-500"><li>New In</li><li>Clothing</li><li>Accessories</li><li>Sale</li></ul></div>
+      <div><h4 class="font-semibold mb-4">About</h4><ul class="space-y-2 text-gray-500"><li>Our Story</li><li>Careers</li><li>Sustainability</li><li>Press</li></ul></div>
+      <div><h4 class="font-semibold mb-4">Help</h4><ul class="space-y-2 text-gray-500"><li>Shipping</li><li>Returns</li><li>Size Guide</li><li>Contact</li></ul></div>
+      <div><h4 class="font-semibold mb-4">Follow</h4><ul class="space-y-2 text-gray-500"><li>Instagram</li><li>Twitter</li><li>TikTok</li><li>Pinterest</li></ul></div>
+    </div>
+    <div class="max-w-7xl mx-auto px-4 mt-12 pt-8 border-t border-gray-100 text-center text-xs text-gray-400">
+      &copy; 2025 Ayaan Fashion. All rights reserved.
+    </div>
+  </footer>
+
+  <script src="public/script.js"></script>
+</body>
+</html>
