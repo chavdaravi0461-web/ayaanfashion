@@ -1,12 +1,12 @@
 const products = [
-  { name: "Oversized Cotton Tee", price: "$49", img: "https://images.unsplash.com/photo-1521572163474-6864f9cf17ab?w=400&q=80" },
-  { name: "Linen Blend Shirt", price: "$89", img: "https://images.unsplash.com/photo-1596755094514-f87e34085b2c?w=400&q=80" },
-  { name: "Tailored Wool Blazer", price: "$199", img: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&q=80" },
-  { name: "Slim Fit Chinos", price: "$79", img: "https://images.unsplash.com/photo-1624378439575-d8705ad7ae80?w=400&q=80" },
-  { name: "Leather Crossbody Bag", price: "$149", img: "https://images.unsplash.com/photo-1548036328-c9fa89d128fa?w=400&q=80" },
-  { name: "Minimalist Sneakers", price: "$129", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&q=80" },
-  { name: "Silk Midi Dress", price: "$159", img: "https://images.unsplash.com/photo-1572804013309-59a88b7e92f1?w=400&q=80" },
-  { name: "Cashmere Crew Neck", price: "$179", img: "https://images.unsplash.com/photo-1434389677669-e08b4cda3a68?w=400&q=80" },
+  { name: "Chronograph Classic", price: "$249", img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=400&q=80", cat: "Watches" },
+  { name: "Minimalist Leather Strap", price: "$189", img: "https://images.unsplash.com/photo-1523170335258-f5ed11844a49?w=400&q=80", cat: "Watches" },
+  { name: "Luxury Diver", price: "$399", img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=400&q=80", cat: "Watches" },
+  { name: "Smart Hybrid", price: "$279", img: "https://images.unsplash.com/photo-1551028719-00167b16eac5?w=400&q=80", cat: "Watches" },
+  { name: "Classic Sneakers", price: "$129", img: "https://images.unsplash.com/photo-1595950653106-6c9ebd614d3a?w=400&q=80", cat: "Shoes" },
+  { name: "Premium Runners", price: "$159", img: "https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400&q=80", cat: "Shoes" },
+  { name: "Leather Loafers", price: "$199", img: "https://images.unsplash.com/photo-1614252369475-531eba835eb1?w=400&q=80", cat: "Shoes" },
+  { name: "High-Top Edge", price: "$149", img: "https://images.unsplash.com/photo-1551107696-a4b0c5a0d9a2?w=400&q=80", cat: "Shoes" },
 ];
 
 const grid = document.getElementById('product-grid');
