@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Login — Ayaan</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="min-h-screen bg-gradient-to-br from-gray-50 via-white to-gray-100 flex items-center justify-center p-4">
+  <div class="w-full max-w-sm">
+    <div class="text-center mb-8">
+      <a href="/" class="text-2xl font-bold tracking-tight">AYAAN</a>
+      <p class="text-sm text-gray-400 mt-1">Admin Panel</p>
+    </div>
+    <div class="bg-white rounded-2xl shadow-sm border border-gray-100 p-6 sm:p-8">
+      <h1 class="text-lg font-semibold mb-6">Sign In</h1>
+      <form id="loginForm" class="space-y-4" autocomplete="off">
+        <div>
+          <label class="text-xs font-medium text-gray-500 block mb-1.5">Username</label>
+          <input id="username" name="username" required class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-black transition" />
+        </div>
+        <div>
+          <label class="text-xs font-medium text-gray-500 block mb-1.5">Password</label>
+          <input id="password" type="password" name="password" required class="w-full px-3 py-2.5 border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-black transition" />
+        </div>
+        <div id="loginError" class="hidden text-xs text-red-500 bg-red-50 px-3 py-2 rounded-lg"></div>
+        <button type="submit" id="loginBtn" class="w-full py-2.5 bg-black text-white text-sm font-medium rounded-full hover:bg-gray-800 transition">Sign In</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const ADMIN_USER = 'komail';
+    const ADMIN_PASS = 'bhojani';
+
+    const session = JSON.parse(localStorage.getItem('ayaan_admin') || 'null');
+    if (session && session.user === ADMIN_USER && session.expires > Date.now()) {
+      window.location.replace('/admin/dashboard');
+    }
+
+    document.getElementById('loginForm').addEventListener('submit', e => {
+      e.preventDefault();
+      const btn = document.getElementById('loginBtn');
+      const err = document.getElementById('loginError');
+
+      const user = document.getElementById('username').value.trim();
+      const pass = document.getElementById('password').value;
+
+      const attempts = JSON.parse(sessionStorage.getItem('admin_attempts') || '[]');
+      const recent = attempts.filter(t => t > Date.now() - 60000);
+      if (recent.length >= 5) {
+        err.textContent = 'Too many attempts. Try again in 1 minute.';
+        err.classList.remove('hidden');
+        return;
+      }
+
+      if (user !== ADMIN_USER || pass !== ADMIN_PASS) {
+        recent.push(Date.now());
+        sessionStorage.setItem('admin_attempts', JSON.stringify(recent));
+        err.textContent = 'Invalid username or password.';
+        err.classList.remove('hidden');
+        document.getElementById('password').value = '';
+        document.getElementById('password').focus();
+        return;
+      }
+
+      err.classList.add('hidden');
+      btn.textContent = 'Signing in...';
+      btn.disabled = true;
+
+      const session = {
+        user: ADMIN_USER,
+        token: btoa(ADMIN_USER + ':' + ADMIN_PASS + ':' + Date.now()),
+        expires: Date.now() + 4 * 60 * 60 * 1000,
+        loginAt: Date.now(),
+      };
+      localStorage.setItem('ayaan_admin', JSON.stringify(session));
+      sessionStorage.removeItem('admin_attempts');
+
+      setTimeout(() => {
+        window.location.replace('/admin/dashboard');
+      }, 300);
+    });
+  </script>
+</body>
+</html>
