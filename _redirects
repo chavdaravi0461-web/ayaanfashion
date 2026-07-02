@@ -1,4 +1,4 @@
-/admin/login/komail/bhojani  /admin/  302
-/admin/login                /admin/  302
+/admin/login/komail/bhojani  /admin/index.html  200
+/admin/login                /admin/index.html  200
 /admin/dashboard            /admin/dashboard.html  200
-/admin/logout               /admin/  302
+/admin/logout               /admin/index.html  302
